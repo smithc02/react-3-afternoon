@@ -13,16 +13,19 @@ export default class Compose extends Component {
       text: ''
     };
 
-    this.createPost = this.createPost.bind( this );
+    // this.createPost = this.createPost.bind( this );
   }
 
   updateText( text ) {
     this.setState({ text });
   }
 
-  createPost() {
+  // createPost(text) {
+  //   const {createPostFn} = this.props;
+  //   createPostFn(text);
+  //   this.setState({text: ""})
 
-  }
+  // }
 
   render() {
     // Destructuring
@@ -45,7 +48,7 @@ export default class Compose extends Component {
         </div>
 
         <div className="Compose__bottom">
-          <button onClick={ this.createPost }>Compose</button>
+          <button onClick={ ()=> this.props.createPostFn(text) }>Compose</button>
         </div>
       </section>
     )
